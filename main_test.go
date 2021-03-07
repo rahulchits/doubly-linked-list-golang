@@ -3,156 +3,156 @@ package doublylinkedlist
 import "testing"
 
 func TestSingleNodeHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	expectingSingleNode(t, tll, node)
+	rahull.setHead(node)
+	expectingSingleNode(t, rahull, node)
 }
 
 func TestSingleNodeTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	expectingSingleNode(t, tll, node)
+	rahull.setTail(node)
+	expectingSingleNode(t, rahull, node)
 }
 
 func TestRemoveHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	tll.remove(node)
-	expectingEmpty(t, tll)
+	rahull.setHead(node)
+	rahull.remove(node)
+	expectingEmpty(t, rahull)
 }
 
 func TestRemoveTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	tll.remove(node)
-	expectingEmpty(t, tll)
+	rahull.setTail(node)
+	rahull.remove(node)
+	expectingEmpty(t, rahull)
 }
 
 func TestRemoveNodesWithValueHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	tll.removeNodesWithValue(1)
-	expectingEmpty(t, tll)
+	rahull.setHead(node)
+	rahull.removeNodesWithValue(1)
+	expectingEmpty(t, rahull)
 }
 
 func TestRemoveNodesWithValueTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	tll.removeNodesWithValue(1)
-	expectingEmpty(t, tll)
+	rahull.setTail(node)
+	rahull.removeNodesWithValue(1)
+	expectingEmpty(t, rahull)
 }
 
 func TestInsertAtPosition(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.insertAtPosition(1, node)
-	expectingSingleNode(t, tll, node)
+	rahull.insertAtPosition(1, node)
+	expectingSingleNode(t, rahull, node)
 }
 
 func TestSetHeadAndTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.setTail(second)
-	expectingHeadTail(t, tll, first, second)
+	rahull.setHead(first)
+	rahull.setTail(second)
+	expectingHeadTail(t, rahull, first, second)
 }
 
 func TestInsertAfterHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.insertAfter(first, second)
-	expectingHeadTail(t, tll, first, second)
+	rahull.setHead(first)
+	rahull.insertAfter(first, second)
+	expectingHeadTail(t, rahull, first, second)
 }
 
 func TestInsertBeforeHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.insertBefore(first, second)
-	expectingHeadTail(t, tll, second, first)
+	rahull.setHead(first)
+	rahull.insertBefore(first, second)
+	expectingHeadTail(t, rahull, second, first)
 }
 
 func TestInsertAfterTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setTail(first)
-	tll.insertAfter(first, second)
-	expectingHeadTail(t, tll, first, second)
+	rahull.setTail(first)
+	rahull.insertAfter(first, second)
+	expectingHeadTail(t, rahull, first, second)
 }
 
 func TestInsertBeforeTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.insertBefore(first, second)
-	expectingHeadTail(t, tll, second, first)
+	rahull.setHead(first)
+	rahull.insertBefore(first, second)
+	expectingHeadTail(t, rahull, second, first)
 }
 
 func TestInsertAtPositionHeadTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.insertAtPosition(1, first)
-	tll.insertAtPosition(2, second)
-	expectingHeadTail(t, tll, first, second)
+	rahull.insertAtPosition(1, first)
+	rahull.insertAtPosition(2, second)
+	expectingHeadTail(t, rahull, first, second)
 }
 
 func TestContainsNodeWithValueHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	if !tll.containsNodeWithValue(1) {
+	rahull.setHead(node)
+	if !rahull.containsNodeWithValue(1) {
 		t.Fail()
 	}
 }
 
 func TestContainsNodeWithValueTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	if !tll.containsNodeWithValue(1) {
+	rahull.setTail(node)
+	if !rahull.containsNodeWithValue(1) {
 		t.Fail()
 	}
 }
 
 func TestContainsNodeWithValue(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	rahull := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 	third := newNode(3)
 
-	tll.setHead(first)
-	tll.insertAfter(first, second)
-	tll.insertAfter(second, third)
+	rahull.setHead(first)
+	rahull.insertAfter(first, second)
+	rahull.insertAfter(second, third)
 
-	if !tll.containsNodeWithValue(2) {
+	if !rahull.containsNodeWithValue(2) {
 		t.Fail()
 	}
 }
@@ -163,29 +163,29 @@ func newNode(value int) *Node {
 	}
 }
 
-func expectingSingleNode(t *testing.T, tll *DoublyLinkedList, node *Node) {
-	if tll.head != node {
+func expectingSingleNode(t *testing.T, rahull *DoublyLinkedList, node *Node) {
+	if rahull.head != node {
 		t.Fail()
 	}
-	if tll.tail != node {
-		t.Fail()
-	}
-}
-
-func expectingEmpty(t *testing.T, tll *DoublyLinkedList) {
-	if tll.head != nil {
-		t.Fail()
-	}
-	if tll.tail != nil {
+	if rahull.tail != node {
 		t.Fail()
 	}
 }
 
-func expectingHeadTail(t *testing.T, tll *DoublyLinkedList, head *Node, tail *Node) {
-	if tll.head != head {
+func expectingEmpty(t *testing.T, rahull *DoublyLinkedList) {
+	if rahull.head != nil {
 		t.Fail()
 	}
-	if tll.tail != tail {
+	if rahull.tail != nil {
+		t.Fail()
+	}
+}
+
+func expectingHeadTail(t *testing.T, rahull *DoublyLinkedList, head *Node, tail *Node) {
+	if rahull.head != head {
+		t.Fail()
+	}
+	if rahull.tail != tail {
 		t.Fail()
 	}
 }
