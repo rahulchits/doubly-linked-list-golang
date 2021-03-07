@@ -3,156 +3,156 @@ package doublylinkedlist
 import "testing"
 
 func TestSingleNodeHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	expectingSingleNode(t, tll, node)
+	srill.setHead(node)
+	expectingSingleNode(t, srill, node)
 }
 
 func TestSingleNodeTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	expectingSingleNode(t, tll, node)
+	srill.setTail(node)
+	expectingSingleNode(t, srill, node)
 }
 
 func TestRemoveHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	tll.remove(node)
-	expectingEmpty(t, tll)
+	srill.setHead(node)
+	srill.remove(node)
+	expectingEmpty(t, srill)
 }
 
 func TestRemoveTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	tll.remove(node)
-	expectingEmpty(t, tll)
+	srill.setTail(node)
+	srill.remove(node)
+	expectingEmpty(t, srill)
 }
 
 func TestRemoveNodesWithValueHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	tll.removeNodesWithValue(1)
-	expectingEmpty(t, tll)
+	srill.setHead(node)
+	srill.removeNodesWithValue(1)
+	expectingEmpty(t, srill)
 }
 
 func TestRemoveNodesWithValueTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	tll.removeNodesWithValue(1)
-	expectingEmpty(t, tll)
+	srill.setTail(node)
+	srill.removeNodesWithValue(1)
+	expectingEmpty(t, srill)
 }
 
 func TestInsertAtPosition(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.insertAtPosition(1, node)
-	expectingSingleNode(t, tll, node)
+	srill.insertAtPosition(1, node)
+	expectingSingleNode(t, srill, node)
 }
 
 func TestSetHeadAndTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.setTail(second)
-	expectingHeadTail(t, tll, first, second)
+	srill.setHead(first)
+	srill.setTail(second)
+	expectingHeadTail(t, srill, first, second)
 }
 
 func TestInsertAfterHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.insertAfter(first, second)
-	expectingHeadTail(t, tll, first, second)
+	srill.setHead(first)
+	srill.insertAfter(first, second)
+	expectingHeadTail(t, srill, first, second)
 }
 
 func TestInsertBeforeHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.insertBefore(first, second)
-	expectingHeadTail(t, tll, second, first)
+	srill.setHead(first)
+	srill.insertBefore(first, second)
+	expectingHeadTail(t, srill, second, first)
 }
 
 func TestInsertAfterTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setTail(first)
-	tll.insertAfter(first, second)
-	expectingHeadTail(t, tll, first, second)
+	srill.setTail(first)
+	srill.insertAfter(first, second)
+	expectingHeadTail(t, srill, first, second)
 }
 
 func TestInsertBeforeTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.setHead(first)
-	tll.insertBefore(first, second)
-	expectingHeadTail(t, tll, second, first)
+	srill.setHead(first)
+	srill.insertBefore(first, second)
+	expectingHeadTail(t, srill, second, first)
 }
 
 func TestInsertAtPositionHeadTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 
-	tll.insertAtPosition(1, first)
-	tll.insertAtPosition(2, second)
-	expectingHeadTail(t, tll, first, second)
+	srill.insertAtPosition(1, first)
+	srill.insertAtPosition(2, second)
+	expectingHeadTail(t, srill, first, second)
 }
 
 func TestContainsNodeWithValueHead(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setHead(node)
-	if !tll.containsNodeWithValue(1) {
+	srill.setHead(node)
+	if !srill.containsNodeWithValue(1) {
 		t.Fail()
 	}
 }
 
 func TestContainsNodeWithValueTail(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	node := newNode(1)
 
-	tll.setTail(node)
-	if !tll.containsNodeWithValue(1) {
+	srill.setTail(node)
+	if !srill.containsNodeWithValue(1) {
 		t.Fail()
 	}
 }
 
 func TestContainsNodeWithValue(t *testing.T) {
-	tll := NewDoublyLinkedList()
+	srill := NewDoublyLinkedList()
 	first := newNode(1)
 	second := newNode(2)
 	third := newNode(3)
 
-	tll.setHead(first)
-	tll.insertAfter(first, second)
-	tll.insertAfter(second, third)
+	srill.setHead(first)
+	srill.insertAfter(first, second)
+	srill.insertAfter(second, third)
 
-	if !tll.containsNodeWithValue(2) {
+	if !srill.containsNodeWithValue(2) {
 		t.Fail()
 	}
 }
@@ -163,29 +163,29 @@ func newNode(value int) *Node {
 	}
 }
 
-func expectingSingleNode(t *testing.T, tll *DoublyLinkedList, node *Node) {
-	if tll.head != node {
+func expectingSingleNode(t *testing.T, srill *DoublyLinkedList, node *Node) {
+	if srill.head != node {
 		t.Fail()
 	}
-	if tll.tail != node {
-		t.Fail()
-	}
-}
-
-func expectingEmpty(t *testing.T, tll *DoublyLinkedList) {
-	if tll.head != nil {
-		t.Fail()
-	}
-	if tll.tail != nil {
+	if srill.tail != node {
 		t.Fail()
 	}
 }
 
-func expectingHeadTail(t *testing.T, tll *DoublyLinkedList, head *Node, tail *Node) {
-	if tll.head != head {
+func expectingEmpty(t *testing.T, srill *DoublyLinkedList) {
+	if srill.head != nil {
 		t.Fail()
 	}
-	if tll.tail != tail {
+	if srill.tail != nil {
+		t.Fail()
+	}
+}
+
+func expectingHeadTail(t *testing.T, srill *DoublyLinkedList, head *Node, tail *Node) {
+	if srill.head != head {
+		t.Fail()
+	}
+	if srill.tail != tail {
 		t.Fail()
 	}
 }
